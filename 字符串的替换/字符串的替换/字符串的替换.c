@@ -1,23 +1,23 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
-#include <Windows.h> //ÒıÓÃÁËSleepº¯Êı
-#include <stdlib.h>	//ÒıÓÃÁËsystem()º¯Êı
+#include <Windows.h> //å¼•ç”¨äº†Sleepå‡½æ•°
+#include <stdlib.h>	//å¼•ç”¨äº†system()å‡½æ•°
 int main()
 {
-	char a[] = "¹ã¶«Ê¡½ÒÑôÊĞ½ÒÎ÷ÏØ»ÒÕ¯ÕòÀÏ¹¬ÁÖ´åºóÁë¶Î";
+	char a[] = "nice to meet you!!!!!!!!!!!!!!!!!!!!!!";
 	char b[] = "**************************************";
 	int c = strlen(a)-1;
-	int left = 0; //×óÏÂ±ê 
-	int right = c; //ÓÒÏÂ±ê
+	int left = 0; //å·¦ä¸‹æ ‡ 
+	int right = c; //å³ä¸‹æ ‡
 	while (left<=right)
 	{
 		b[left] = a[left];
 		left++;
 		b[right] = a[right];
 		right--;
-		Sleep(1000);//ĞİÏ¢1s
-		system("cls");//Ö´ĞĞÏµÍ³ÃüÁîµÄÒ»¸öº¯Êı; cls -- Çå¿ÕÆÁÄ»
+		Sleep(1000);//ä¼‘æ¯1s
+		system("cls");//æ‰§è¡Œç³»ç»Ÿå‘½ä»¤çš„ä¸€ä¸ªå‡½æ•°; cls -- æ¸…ç©ºå±å¹•
 		printf("%s\n", b);
 	}
 	return 0;
