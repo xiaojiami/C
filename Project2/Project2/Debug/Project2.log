@@ -1,0 +1,12 @@
+﻿生成启动时间为 2022/9/4 21:04:52。
+     1>项目“H:\鹏哥C语言\C语言项目\Project2\Project2\Project2.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         H:\VS code\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt "源.c"
+         源.c
+     1>h:\鹏哥c语言\c语言项目\project2\project2\源.c(7): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 h:\vs code\vc\include\stdio.h(283) : 参见“scanf”的声明
+     1>已完成生成项目“H:\鹏哥C语言\C语言项目\Project2\Project2\Project2.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.26
