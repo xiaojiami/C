@@ -1,42 +1,42 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "game.h"
-#include <Windows.h>  //µ÷ÓÃSleep()ÑÓÊ±º¯Êı
-//Èı×ÓÆåÓÎÏ·
+#include <Windows.h>  //è°ƒç”¨Sleep()å»¶æ—¶å‡½æ•°
+//ä¸‰å­æ£‹æ¸¸æˆ
 
 
-//ÓÎÏ·µÄÕû¸öËã·¨ÊµÏÖ
+//æ¸¸æˆçš„æ•´ä¸ªç®—æ³•å®ç°
 void game()
 {
 	char ret = 0;
-	// Êı×é->´æ·ÅÏÂÆåµÄĞÅÏ¢
-	char board[ROW][COL] = { 0 }; // È«²¿¿Õ¸ñ
+	// æ•°ç»„->å­˜æ”¾ä¸‹æ£‹çš„ä¿¡æ¯
+	char board[ROW][COL] = { 0 }; // å…¨éƒ¨ç©ºæ ¼
 
-	// ³õÊ¼»¯ÆåÅÌ
+	// åˆå§‹åŒ–æ£‹ç›˜
 	InitBoard(board,ROW,COL);
 
-	// ´òÓ¡ÆåÅÌ
+	// æ‰“å°æ£‹ç›˜
 	DisplayBoard(board,ROW,COL);
 
-	// ÏÂÆå
+	// ä¸‹æ£‹
 	while (1)
 	{
-		// Íæ¼ÒÏÂÆå
+		// ç©å®¶ä¸‹æ£‹
 		PlayerMove(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
-		// ÅĞ¶ÏÍæ¼ÒÊÇ·ñÓ®
+		// åˆ¤æ–­ç©å®¶æ˜¯å¦èµ¢
 		ret = IsWin(board,ROW,COL);
-		if (ret != 'C') // ÓÎÏ·½áÊø
+		if (ret != 'C') // æ¸¸æˆç»“æŸ
 		{
 			break;
 		}
 
-		// µçÄÔÏÂÆå
+		// ç”µè„‘ä¸‹æ£‹
 		Computer(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
-		// ÅĞ¶ÏµçÄÔÊÇ·ñÓ®
+		// åˆ¤æ–­ç”µè„‘æ˜¯å¦èµ¢
 		ret = IsWin(board, ROW, COL);
-		if (ret != 'C') // ÓÎÏ·½áÊø
+		if (ret != 'C') // æ¸¸æˆç»“æŸ
 		{
 			break;
 		}
@@ -44,48 +44,48 @@ void game()
 	}
 	if (ret == '*')
 	{
-		printf("ÄãÓ®ÁË£¡\n");
+		printf("ä½ èµ¢äº†ï¼\n");
 	}
 	else if (ret == '#')
 	{
-		printf("µçÄÔÓ®£¡\n");
+		printf("ç”µè„‘èµ¢ï¼\n");
 	}
 	else
 	{
-		printf("Æ½¾Ö\n");
+		printf("å¹³å±€\n");
 	}
 
 
 }
 void menu()
 {
-	printf("********  Èı×ÓÆåÓÎÏ·  ********\n");
-	printf("****   1.start    2.exit  ****\n");
+	printf("********  ä¸‰å­æ£‹æ¸¸æˆ  ********\n");
+	printf("****   1.start    0.exit  ****\n");
 	printf("******************************\n");
 }
 void test()
 {
 	int input = 0;
-	srand((unsigned int)time(NULL));  // Ê±¼ä´Á£¬Éú³ÉËæ»úÊıµÄÆğÊ¼µã
+	srand((unsigned int)time(NULL));  // æ—¶é—´æˆ³ï¼Œç”Ÿæˆéšæœºæ•°çš„èµ·å§‹ç‚¹
 	do
 	{
 		menu();
-		printf("ÇëÑ¡Ôñ£¨1/2):>");
+		printf("è¯·é€‰æ‹©ï¼ˆ1/0):>");
 		scanf("%d", &input);
 		switch (input)
 		{
 		case 1:
-			printf("ÓÎÏ·¿ªÊ¼\n");
+			printf("æ¸¸æˆå¼€å§‹\n");
 			game();
-			printf("ÓÎÏ·½«ÔÚ5sºóÖØÖÃ");
+			printf("æ¸¸æˆå°†åœ¨5såé‡ç½®");
 			Sleep(5000);
-			system("cls");  // ÇåÆÁ
+			system("cls");  // æ¸…å±
 			break;
 		case 0:
-			printf("ÓÎÏ·ÍË³ö\n");
+			printf("æ¸¸æˆé€€å‡º\n");
 			break;
 		default:
-			printf("ÊäÈë´íÎó£¬ÇëÖØĞÂÑ¡Ôñ£º>\n");
+			printf("è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°é€‰æ‹©ï¼š>\n");
 			break;
 		}
 		
